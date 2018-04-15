@@ -1,5 +1,3 @@
-# algocasts
-
 // --- Directions
 // Write a function that accepts an integer N
 // and returns a NxN spiral matrix.
@@ -68,6 +66,7 @@ function getNextBorder(direction) {
 
 function solve( matrix ) {
 
+	rightCorner = 0;
     counter = 1;
 
     height = matrix.length-1;
@@ -81,7 +80,7 @@ function solve( matrix ) {
 
     let newVar;
 
-    while (counter <= matrix.length*matrix.length){
+    while (counter <= (matrix.length*matrix.length) ){
 
 //    	try {
         newVar = matrix[current_i][current_j];
@@ -109,10 +108,12 @@ function solve( matrix ) {
         current_j = current_j+(1*direction[1]);
 
     }
-
-    printBorder();
-    printMatrix(matrix);
-    printBorder();
+//
+//    printBorder();
+//    printMatrix(matrix);
+//    printBorder();
+    
+    return matrix;
 
 }
 
@@ -153,10 +154,10 @@ function createMatrix( length , width ) {
 
     }
 
-    // printBorder();
-    // console.log("MATRIX CREATED!");
-    // printMatrix(matrix);
-    // printBorder();
+//     printBorder();
+//     console.log("MATRIX CREATED!");
+//     printMatrix(matrix);
+//     printBorder();
 
     return matrix
 
@@ -168,12 +169,12 @@ function matrix(n) {
 
     solve(a);
     
+    return a;
+    
 }
 
 module.exports = matrix;
 
 //matrix(2);
-
-matrix(5);
-
+//matrix(3);
 //matrix(4);
